@@ -1,0 +1,133 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# Camera calibration and distortion parameters (OpenCV) 
+# Camera.fx: 386.6417236328125
+# Camera.fy: 386.2043151855469
+Camera.fx: 387.3789978027344
+Camera.fy: 386.9407653808594
+Camera.cx: 323.794921875
+Camera.cy: 243.11862182617188
+
+Camera.k1: -0.055237364023923874
+Camera.k2: 0.0651610866189003
+Camera.p1: -0.0005883294506929815
+Camera.p2: -0.00010379464220022783
+Camera.k3: -0.021359432488679886
+
+Camera.width: 640
+Camera.height: 480
+
+# Camera frames per second 
+Camera.fps: 30.0
+
+# IR projector baseline times fx (aprox.)
+Camera.bf: 36.73096374511719
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 40.0
+
+# Deptmap values factor
+DepthMapFactor: 1000.0
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 1500
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+#ORBextractor.iniThFAST: 10
+#ORBextractor.minThFAST: 2
+
+ORBextractor.maxDepth: 6.0
+ORBextractor.minDepth: 0.01
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 3.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+Viewer.DisplayLayer: 1
+
+Filter.ClusterDistance: 0.1
+Filter.IkdTreeNearestSearch: 0.2
+Filter.LofThreshold: 1.6
+
+# rgbd_dataset_freiburg3_long_office_household
+PlaneDirection.Z0: -0.0159849
+PlaneDirection.Z1: -0.466079
+PlaneDirection.Z2: 0.884599
+PlaneDirection.Z3: -2.74084
+UsePlaneDirection: 0
+
+# clio ground direction
+#PlaneGroundDirection.Z0: -0.00203952
+#PlaneGroundDirection.Z1: -0.99985
+#PlaneGroundDirection.Z2: -0.0171847
+#PlaneGroundDirection.Z3: 0.259831
+
+# d455 plane
+#PlaneGroundDirection.Z0: 0.0404279
+#PlaneGroundDirection.Z1: -0.995186
+#PlaneGroundDirection.Z2: -0.0892778
+#PlaneGroundDirection.Z3: 1.01937
+
+PlaneGroundDirection.Z0: 0.0666479
+PlaneGroundDirection.Z1: -0.997638
+PlaneGroundDirection.Z2: 0.0166504
+PlaneGroundDirection.Z3: 1.44003
+
+PointCloudMap.MinRange: -1.5
+PointCloudMap.MaxRange: 0.5
+PointCloudMap.Resolution: 0.01
+
+RelationshipScale: 500000
+RelationshipEdgeDistance: 1.2
+
+# grid map
+GridMap.MapRangeX: 1000
+GridMap.MapRangeY: 1000
+GridMap.OriginX: 0.0
+GridMap.OriginY: 0.0
+GridMap.OriginZ: 0.0
+GridMap.InitPoseX: 400
+GridMap.InitPoseY: 400
+GridMap.Resolution: 0.05
+GridMap.RoomSize: 500
+GridMap.FreeProbability: 0.3
+GridMap.OccupyProbability: 0.7
+
+# LLMs
+LLMs.ModelPath: "/home/lzm/Software/llama.cpp/models/llms/gemma-1.1-7b-it.Q4_K_M.gguf"
+# VLMs
+VLMs.ModelPath: "/home/lzm/Software/llama.cpp/models/vlms/llava-v1.5-7b-Q4_K_M.gguf"
+
+# path
+Record.path: "/home/lzm/Projects/object_reconstruction_ours/our_collect"
